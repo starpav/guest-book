@@ -1,9 +1,9 @@
-import { PostedMessage, messages } from './model';
+import { PostedMessage, messages,visiters } from './model';
 
 // --- contract code goes below
 
 // The maximum number of latest messages the contract returns.
-const MESSAGE_LIMIT = 10;
+const MESSAGE_LIMIT = 38;
 
 /**
  * Adds a new message under the name of the sender's account id.\
@@ -14,6 +14,10 @@ export function addMessage(text: string): void {
   // Creating a new message and populating fields with our data
   const message = new PostedMessage(text);
   // Adding the message to end of the the persistent collection
+
+  assert(!visiters.has(message.sender), 'A user to only sign the guest book once')
+  visiters.add(message.sender);
+
   messages.push(message);
 }
 

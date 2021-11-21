@@ -3,11 +3,11 @@
 }
 
 html {
-  --bg: #fff;
+  --bg: rgb(97, 205, 219);
   --fg: #25282A;
   --gray: #888;
-  --royal: #0072CE;
-  --blue: #6AD1E3;
+  --royal: #d47d0a;
+  --blue: #093de7;
   --primary: #D1CCBD;
   --secondary: var(--royal);
   --tertiary: #FF585D;
@@ -20,7 +20,7 @@ html {
 
   ::selection {
     background: var(--secondary);
-    color: var(--bg);
+    color: var(--tertiary);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -116,7 +116,15 @@ button {
 }
 
 .is-premium {
-  border-left: 0.25em solid var(--secondary);
-  padding-left: 0.25em;
-  margin-left: -0.5em;
+  background-color: #b36e06;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.message-div{
+  background-color: #f5b657;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
 }
